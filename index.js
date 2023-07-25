@@ -26,7 +26,7 @@ app.get('/', (req, res)=>{
     if(err){
       console.log(err);
     }else{
-      res.send(`<h1>Wellcome</h1><h2>Json text:</h2><pre>${content}</pre>`);
+      res.send(`<h1>Wellcome</h1><h2>Json text:</h2><pre>${content.toString()}</pre>`);
     }
   });
 })
@@ -36,13 +36,15 @@ app.get('/', (req, res)=>{
 
 // async function getData () {
 //   const fileData = await promises.readFile(filePath)
-//   return fileData
+//   return fileData.toString()
 // }
 
 
 // app.get('/', async (req, res)=>{
-//   const fileData = await getData();
-//   res.send(`<h1>Wellcome</h1><h2>Json text:</h2><pre>${fileData}</pre>`);
+//   getData()
+//     .then(result =>
+//       res.send(`<h1>Wellcome</h1><h2>Json text:</h2><pre>${result}</pre>`)
+//     )
 // });
 
 
